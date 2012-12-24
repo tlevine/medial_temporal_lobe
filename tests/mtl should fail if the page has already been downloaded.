@@ -1,0 +1,5 @@
+#!/bin/sh
+set -e
+
+! mtl add thomaslevine.com --mtl-dir .mtl_dir-thomaslevine.com
+test $? = 13
