@@ -19,6 +19,7 @@ Websites are saved to the `~/.medial_temporal_lobe` directory, which is a git
 repository. You must initialize it and set and upstream remote.
 
     mkdir ~/.medial_temporal_lobe
+    cd ~/.medial_temporal_lobe
     git init
     git remote add origin [address]
     echo Memories > README
