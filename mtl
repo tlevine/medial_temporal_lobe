@@ -1,13 +1,10 @@
 #!/bin/sh
 
-MTL_DIR="/home/$USER/.medial_temporal_lobe"
+mtl_dir="/home/$USER/.medial_temporal_lobe"
 USAGE="$0 add [url]"
 
 # Check dependencies
-if ! test -e "$MTL_DIR"; then
-    echo "You must create $MTL_DIR."
-    exit 1
-elif ! which uuidgen > /dev/null; then
+if ! which uuidgen > /dev/null; then
     echo 'You need to install uuidgen.'
     exit 1
 fi
@@ -29,6 +26,8 @@ fi
 while [ $# -gt 0 ]
 do
     case "$1" in
+        --mtl-dir) mtl_dir="$2"
+            shift;;
         -t) tags="$2"
             shift;;
         -h) echo $USAGE
@@ -40,8 +39,14 @@ do
     shift
 done
 
+# Check that the memory directory exists.
+if ! test -e "$mtl_dir"; then
+    echo "You must create $mtl_dir."
+    exit 1
+fi
+
 # Check whether the page exists
-if grep -E "url=(https?)?$url" "$MTL_DIR/memories/"*"/info"; then
+if grep -E "url=(https?)?$url" "$mtl_dir/memories/"*"/info"; then
     echo "$url" is already saved.
     exit 1
 fi
@@ -54,18 +59,18 @@ fi
 
 # Save the page.
 uuid=$(uuidgen)
-mkdir -p "$MTL_DIR/memories/$uuid"
-wget -O "$MTL_DIR/memories/$uuid/source" "$url"
+mkdir -p "$mtl_dir/memories/$uuid"
+wget -O "$mtl_dir/memories/$uuid/source" "$url"
 
 # Save some information.
-echo "url=$url" > "$MTL_DIR/memories/$uuid/info"
-echo added=$(date --rfc-3339 ns) >> "$MTL_DIR/memories/$uuid/info"
+echo "url=$url" > "$mtl_dir/memories/$uuid/info"
+echo added=$(date --rfc-3339 ns) >> "$mtl_dir/memories/$uuid/info"
 
 # Save tags
 for tag in $(echo $tags | tr ',' '\n'); do
-    mkdir -p "$MTL_DIR/tags/$tag"
+    mkdir -p "$mtl_dir/tags/$tag"
     (
-        cd "$MTL_DIR/tags/$tag"
+        cd "$mtl_dir/tags/$tag"
         ln -s ../../memories/$uuid .
     )
 done
