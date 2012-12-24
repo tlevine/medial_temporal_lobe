@@ -7,7 +7,7 @@ usage() {
     echo "USAGE: $0 mtl [action] [url] [-ht] [--mtl-dir directory]"
     echo
     echo '-h  Help'
-    echo '-t  Tags, comma-separated, allowed characters: [0-9_]'
+    echo '-t  Tags, comma-separated, allowed characters: [a-z_]'
     echo
 }
 
