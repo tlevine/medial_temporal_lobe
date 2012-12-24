@@ -46,6 +46,12 @@ if grep -E "url=(https?)?$url" "$MTL_DIR/memories/"*"/info"; then
     exit 1
 fi
 
+# Check whether the tags are valid.
+if echo "$tags" | grep '[^a-z_,]' > /dev/null; then
+    echo 'Tags may only contain lowercase letters and underscores and must be separated by commas.'
+    exit 1
+fi
+
 # Save the page.
 uuid=$(uuidgen)
 mkdir -p "$MTL_DIR/memories/$uuid"
@@ -55,3 +61,11 @@ wget -O "$MTL_DIR/memories/$uuid/source" "$url"
 echo "url=$url" > "$MTL_DIR/memories/$uuid/info"
 echo added=$(date --rfc-3339 ns) >> "$MTL_DIR/memories/$uuid/info"
 
+# Save tags
+for tag in $(echo $tags | tr ',' '\n'); do
+    mkdir -p "$MTL_DIR/tags/$tag"
+    (
+        cd "$MTL_DIR/tags/$tag"
+        ln -s ../../memories/$uuid .
+    )
+done
