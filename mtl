@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 mtl_dir="/home/$USER/.medial_temporal_lobe"
 USAGE="USAGE: $0 add [url]"
@@ -66,7 +67,11 @@ fi
 # Save the page.
 uuid=$(uuidgen)
 mkdir -p "$mtl_dir/memories/$uuid"
-wget -O "$mtl_dir/memories/$uuid/source" "$url"
+if ! wget -O "$mtl_dir/memories/$uuid/source" "$url"; then
+    # Clean up on failure.
+    rm -R "$mtl_dir/memories/$uuid"
+    exit 15
+fi
 
 # Save some information.
 echo "url=$url" > "$mtl_dir/memories/$uuid/info"
