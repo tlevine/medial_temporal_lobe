@@ -1,6 +1,9 @@
 #!/bin/sh
 
 mtl add not-a-website --mtl-dir .mtl_dir
-test 15 = $?
+code=$?
+
+set -e
+test 15 = $code
 test -d .mtl_dir/memories
 test 0 = $(ls .mtl_dir/memories | wc -l)
