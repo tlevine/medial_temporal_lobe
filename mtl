@@ -40,6 +40,11 @@ elif test -z "$url"; then
     exit 11
 fi
 
+# Standardize url
+if ! echo "$url" | grep -E '^https?://'; then
+    url="http://$url"
+fi
+
 # Check that the memory directory exists.
 if ! test -e "$mtl_dir"; then
     echo "You must create $mtl_dir."
@@ -47,7 +52,7 @@ if ! test -e "$mtl_dir"; then
 fi
 
 # Check whether the page exists
-if grep -E "url=(https?)?$url" "$mtl_dir/memories/"*"/info"; then
+if grep -E "url=$url" "$mtl_dir/memories/"*"/info"; then
     echo "$url" is already saved.
     exit 13
 fi

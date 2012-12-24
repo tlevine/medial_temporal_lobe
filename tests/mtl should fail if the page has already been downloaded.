@@ -2,3 +2,6 @@
 
 mtl add thomaslevine.com --mtl-dir .mtl_dir-thomaslevine.com
 test $? = 13
+
+mtl add http://thomaslevine.com --mtl-dir .mtl_dir-thomaslevine.com
+test $? = 13
