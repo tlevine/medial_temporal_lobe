@@ -2,13 +2,13 @@ Medial Temporal Lobe
 ==========
 The Medial Temporal Lobe remembers websites for you.
 
-    ./mtl [action] [-ht] [url]
+    mtl [action] [-ht] [url]
 
     -h  Help
     -t  Tags, comma-separated
 
 For now, the only `action` is `add`. I might implement `remove` and `show`
-eventually.
+eventually. Also, for now the tags and help don't work; only the url does.
 
 ## Technical stuff
 Medial Temporal Lobe depends on
@@ -16,7 +16,17 @@ Medial Temporal Lobe depends on
 * uuidgen
 
 Websites are saved to the `~/.medial_temporal_lobe` directory, which is a git
-repository. It gets created if it doesn't exist. That directory looks like this.
+repository. You must initialize it and set and upstream remote.
+
+    mkdir ~/.medial_temporal_lobe
+    git init
+    git remote add origin [address]
+    echo Memories > README
+    git add README
+    git commit README -m create\ repository
+    git push -u origin master
+
+Medial Temporal Lobe makes that directory looks like this.
 
     .medial_temporal_lobe/
         memories/
