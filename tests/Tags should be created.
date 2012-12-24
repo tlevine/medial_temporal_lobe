@@ -1,3 +1,9 @@
 #!/bin/sh
+set -e
 
-mtl add thomaslevine.com --mtl-dir .mtl_dir
+mtl add thomaslevine.com --mtl-dir .mtl_dir -t a,b,c
+uuid=$(ls .mtl_dir/memories)
+
+for tag in a b c; do
+    test "../../memories/$uuid" = $(readlink .mtl_dir/tags/$tag/$uuid)
+done
