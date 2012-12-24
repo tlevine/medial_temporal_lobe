@@ -20,10 +20,10 @@ url="$2"
 
 # Save the page.
 uuid=$(uuidgen)
-mkdir -p "$MTL_DIR/memories/$uuidgen"
-wget -O "$MTL_DIR/memories/$uuidgen/source" "$url"
+mkdir -p "$MTL_DIR/memories/$uuid"
+wget -O "$MTL_DIR/memories/$uuid/source" "$url"
 
 # Save some information.
-echo "url=$2" > "$MTL_DIR/memories/$uuidgen/info"
-echo added=$(date --rfc-3339 ns) >> "$MTL_DIR/memories/$uuidgen/info"
+echo "url=$2" > "$MTL_DIR/memories/$uuid/info"
+echo added=$(date --rfc-3339 ns) >> "$MTL_DIR/memories/$uuid/info"
 
