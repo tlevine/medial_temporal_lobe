@@ -1,25 +1,11 @@
 #!/bin/sh
 
 mtl_dir="/home/$USER/.medial_temporal_lobe"
-USAGE="$0 add [url]"
+USAGE="USAGE: $0 add [url]"
 
 # Check dependencies
 if ! which uuidgen > /dev/null; then
     echo 'You need to install uuidgen.'
-    exit 1
-fi
-
-# Required parameters
-action="$1"
-url="$2"
-shift
-shift
-
-if test "$action" != 'add'; then
-    echo Only the \"add\" action is supported right now.
-    exit 1
-elif test -z "$url"; then
-    echo "$USAGE"
     exit 1
 fi
 
@@ -34,10 +20,25 @@ do
             exit;;
         -*) echo >&2 $USAGE
             exit 1;;
-        *)  break;;
+        *)  if test -z "$action"; then
+              action="$1"
+            elif test -z "$url"; then
+              url="$1"
+            else
+              break
+            fi;;
     esac
     shift
 done
+
+# Check the required parameters.
+if test "$action" != 'add'; then
+    echo Only the \"add\" action is supported right now.
+    exit 1
+elif test -z "$url"; then
+    echo "$USAGE"
+    exit 1
+fi
 
 # Check that the memory directory exists.
 if ! test -e "$mtl_dir"; then
