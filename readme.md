@@ -13,14 +13,17 @@ eventually. So you might do something like this.
     mtl add thomaslevine.com superheroes,pink,letterpress
 
 ## Technical stuff
-Medial Temporal Lobe depends on
+Medial Temporal Lobe depends on uuidgen.
 
-* uuidgen
-
-Websites are saved to the `~/.medial_temporal_lobe` directory, which is a git
-repository. You must initialize it and set and upstream remote.
+Websites are saved to the `~/.medial_temporal_lobe` directory, or to whatever
+directory you specify with `--mtl-dir`. Either way, you must create it.
 
     mkdir ~/.medial_temporal_lobe
+
+You might as well make it a git repository. If you initialize it and set and
+upstream remote. The Medial Temporal Lobe won't synchronize it for you, or at
+least not yet.
+
     cd ~/.medial_temporal_lobe
     git init
     git remote add origin [address]
@@ -48,5 +51,6 @@ The `source` of each memory is the source of whatever url was specified
 (an ordinary GET request), and the `info` looks like this.
 
     url=http://thomaslevine.com/!/new-york-pizza
+    added=2012-12-24 18:08:15.631858487-05:00
 
 It might have other lines eventually.
