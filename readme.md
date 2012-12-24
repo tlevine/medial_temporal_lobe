@@ -10,7 +10,11 @@ The Medial Temporal Lobe remembers websites for you.
 For now, the only `action` is `add`. I might implement `remove` and `show`
 eventually.
 
-## Technical stuff.
+## Technical stuff
+Medial Temporal Lobe depends on
+
+* uuidgen
+
 Websites are saved to the `~/.medial_temporal_lobe` directory, which is a git
 repository. It gets created if it doesn't exist. That directory looks like this.
 
