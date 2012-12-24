@@ -2,7 +2,7 @@ Medial Temporal Lobe
 ==========
 The Medial Temporal Lobe remembers websites for you.
 
-    mtl [action] [-ht] [url]
+    mtl [action] [url] [-ht]
 
     -h  Help
     -t  Tags, comma-separated

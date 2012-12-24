@@ -3,20 +3,48 @@
 MTL_DIR="/home/$USER/.medial_temporal_lobe"
 USAGE="$0 add [url]"
 
-# Check input
+# Check dependencies
 if ! test -e "$MTL_DIR"; then
     echo "You must create $MTL_DIR."
     exit 1
-elif test "$1" != 'add'; then
-    echo Only the \"add\" action is supported right now.
-    exit 1
-elif test "$#" != '2'; then
-    echo $USAGE
+elif ! which uuidgen > /dev/null; then
+    echo 'You need to install uuidgen.'
     exit 1
 fi
 
-# The URL
+# Required parameters
+action="$1"
 url="$2"
+shift
+shift
+
+if test "$action" != 'add'; then
+    echo Only the \"add\" action is supported right now.
+    exit 1
+elif test -z "$url"; then
+    echo "$USAGE"
+    exit 1
+fi
+
+while [ $# -gt 0 ]
+do
+    case "$1" in
+        -t) tags="$2"
+            shift;;
+        -h) echo $USAGE
+            exit;;
+        -*) echo >&2 $USAGE
+            exit 1;;
+        *)  break;;
+    esac
+    shift
+done
+
+# Check whether the page exists
+if grep -E "url=(https?)?$url" "$MTL_DIR/memories/"*"/info"; then
+    echo "$url" is already saved.
+    exit 1
+fi
 
 # Save the page.
 uuid=$(uuidgen)
