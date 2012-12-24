@@ -5,10 +5,12 @@ The Medial Temporal Lobe remembers websites for you.
     mtl [action] [url] [-ht] [--mtl-dir directory]
 
     -h  Help
-    -t  Tags, comma-separated
+    -t  Tags, comma-separated, allowed characters: [0-9_]
 
 For now, the only `action` is `add`. I might implement `remove` and `show`
-eventually. Also, for now the tags and help don't work; only the url does.
+eventually. So you might do something like this.
+
+    mtl add thomaslevine.com -h favorite_
 
 ## Technical stuff
 Medial Temporal Lobe depends on

@@ -2,7 +2,14 @@
 set -e
 
 mtl_dir="/home/$USER/.medial_temporal_lobe"
-USAGE="USAGE: $0 add [url]"
+usage() {
+    echo
+    echo "USAGE: $0 mtl [action] [url] [-ht] [--mtl-dir directory]"
+    echo
+    echo '-h  Help'
+    echo '-t  Tags, comma-separated, allowed characters: [0-9_]'
+    echo
+}
 
 # Check dependencies
 if ! which uuidgen > /dev/null; then
@@ -17,9 +24,9 @@ do
             shift;;
         -t) tags="$2"
             shift;;
-        -h) echo $USAGE
+        -h) usage
             exit;;
-        -*) echo >&2 $USAGE
+        -*) usage >&2
             exit 1;;
         *)  if test -z "$action"; then
               action="$1"
@@ -37,7 +44,7 @@ if test "$action" != 'add'; then
     echo Only the \"add\" action is supported right now.
     exit 11
 elif test -z "$url"; then
-    echo "$USAGE"
+    usage
     exit 11
 fi
 
