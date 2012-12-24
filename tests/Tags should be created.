@@ -1,0 +1,3 @@
+#!/bin/sh
+
+mtl add thomaslevine.com --mtl-dir .mtl_dir
