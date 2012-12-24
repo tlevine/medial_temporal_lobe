@@ -12,7 +12,7 @@ eventually. So you might do something like this.
 
     mtl add thomaslevine.com superheroes,pink,letterpress
 
-## Technical stuff
+## Dependencies
 Medial Temporal Lobe depends on uuidgen.
 
 Websites are saved to the `~/.medial_temporal_lobe` directory, or to whatever
@@ -32,6 +32,7 @@ least not yet.
     git commit README -m create\ repository
     git push -u origin master
 
+## Technical stuff
 Medial Temporal Lobe makes that directory looks like this.
 
     .medial_temporal_lobe/
@@ -54,3 +55,6 @@ The `source` of each memory is the source of whatever url was specified
     added=2012-12-24 18:08:15.631858487-05:00
 
 It might have other lines eventually.
+
+Here's an [example](https://github.com/tlevine/.medial_temporal_lobe) of this
+directory.
