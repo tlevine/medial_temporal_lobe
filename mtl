@@ -74,7 +74,7 @@ fi
 # Save the page.
 uuid=$(uuidgen)
 mkdir -p "$mtl_dir/memories/$uuid"
-if ! wget -O "$mtl_dir/memories/$uuid/source" "$url"; then
+if ! wget -U "Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2" -O "$mtl_dir/memories/$uuid/source" "$url"; then
     # Clean up on failure.
     rm -R "$mtl_dir/memories/$uuid"
     exit 15
