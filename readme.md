@@ -10,7 +10,7 @@ The Medial Temporal Lobe remembers websites for you.
 For now, the only `action` is `add`. I might implement `remove` and `show`
 eventually. So you might do something like this.
 
-    mtl add thomaslevine.com superheroes,pink,letterpress
+    mtl add -t superheroes,pink,letterpress thomaslevine.com 
 
 ## Dependencies
 Medial Temporal Lobe depends on uuidgen.
