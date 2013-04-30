@@ -7,7 +7,7 @@ usage() {
     echo "USAGE: $0 mtl [action] [url] [-ht] [--mtl-dir directory]"
     echo
     echo '-h  Help'
-    echo '-t  Tags, comma-separated, allowed characters: [a-z_]'
+    echo '-t  Tags, comma-separated, allowed characters: [0-9a-z_]'
     echo
 }
 
@@ -66,7 +66,7 @@ if test $(ls "$mtl_dir/memories/" | wc -l) -gt 0 && grep -E "url=$url" "$mtl_dir
 fi
 
 # Check whether the tags are valid.
-if echo "$tags" | grep '[^a-z_,]' > /dev/null; then
+if echo "$tags" | grep '[^0-9a-z_,]' > /dev/null; then
     echo 'Tags may only contain lowercase letters and underscores and must be separated by commas.'
     exit 14
 fi
