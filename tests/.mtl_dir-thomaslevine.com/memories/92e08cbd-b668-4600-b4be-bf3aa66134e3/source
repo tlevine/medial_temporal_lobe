@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"></html>
+ <![endif]--><!--[if IE 7]>    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html class="no-js lt-ie9 lt-ie8"></html>
+ <![endif]--><!--[if IE 8]>    <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html class="no-js lt-ie9"></html>
+ <![endif]--><!--[if gt IE 8]><!--><html class="no-js">
+  <!--<![endif]-->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Meta data analysis</title>
+    <meta content="" name="description">
+    <meta content="Thomas Levine" name="author">
+    <link href="http://domain/humans.txt" rel="author" type="text/plain">
+    <meta content="nanoc 3.6.4" name="generator">
+    <meta content="width=device-width" name="viewport">
+    <meta content="summary" name="twitter:card">
+    <meta content="@thomaslevine" name="twitter:site">
+    <meta content="Meta data analysis" name="twitter:title">
+    <meta content="" name="twitter:description">
+    <meta content="@thomaslevine" name="twitter:creator">
+    <meta content="http://thomaslevine.com/apple-touch-icon-144x144-precomposed.png" name="twitter:image:src">
+    <meta content="thomaslevine.com" name="twitter:domain">
+    <meta content="" name="twitter:app:name:iphone">
+    <meta content="" name="twitter:app:name:ipad">
+    <meta content="" name="twitter:app:name:googleplay">
+    <meta content="" name="twitter:app:url:iphone">
+    <meta content="" name="twitter:app:url:ipad">
+    <meta content="" name="twitter:app:url:googleplay">
+    <meta content="" name="twitter:app:id:iphone">
+    <meta content="" name="twitter:app:id:ipad">
+    <meta content="" name="twitter:app:id:googleplay">
+    <meta content="http://thomaslevine.com/open-data/" property="og:url">
+    <meta content="thomaslevine.com" property="og:site_name">
+    <meta content="" property="og:description">
+    <meta content="Meta data analysis" property="og:title">
+    <meta content="http://thomaslevine.com/apple-touch-icon-144x144-precomposed.png" property="og:image">
+    <link href="../favicon.ico" rel="icon" type="image/x-icon">
+    <link href="../!/feed.xml" rel="alternate" title="Thomas Levine" type="application/atom+xml">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700" rel="stylesheet" type="text/css">
+    <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <link href="../css/style-cb653401acb.css" rel="stylesheet">
+    <script src="../js/modernizr-cb42306a279.js"></script>
+  </head>
+  <body class="open-data">
+    <!--[if lt IE 7 ]>
+      <p class="chromeframe">
+        You are using an <strong>outdated</strong> browser.
+        Please <a href="http://browsehappy.com/">upgrade your browser</a> or
+        <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a>
+        to improve your experience.
+      </p>
+    <![endif]-->
+    <div id="wrapper">
+      <div id="container">
+        <nav>
+          <ul class="nobullet">
+            <li class="link">
+              <a href="../">
+                <div>~</div>
+              </a>
+            </li>
+            <li class="link">
+              <a href="../!/">
+                <div>!</div>
+              </a>
+            </li>
+            <li class="link">
+              <a href="../!/about/">
+                <div>?</div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <header class="tag-card">
+          <h1>Meta data analysis</h1>
+          <div>
+            <p>I’ve been studying data about open data
+            to figure out what open data are released,
+            how people are using them, and how we can
+            make them better.</p>
+            
+            <p>If you haven’t read any of this, you might start with
+            <a href="../!/data-about-open-data-talk-december-2-2013/">this summary</a>
+            of the more interesting discoveries.</p>
+          </div>
+        </header>
+        <div class="clearfix" id="links">
+          <div class="link">
+            <strong>
+              <a href="../!/socrata-products/">Semi-open data about pricing of open data</a>
+            </strong>
+            <footer>
+              Dec 26, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/get-meta/">Get Meta! (Hire me.)</a>
+            </strong>
+            <footer>
+              Dec 18, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/what-is-open-data/">What is open data?</a>
+            </strong>
+            <footer>
+              Dec 17, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/my-datasets-about-open-data/">Datasets about open data</a>
+            </strong>
+            <footer>
+              Dec 12, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/data-about-open-data-talk-december-2-2013/">100,000 open data across 100 portal</a>
+            </strong>
+            <footer>
+              Dec 02, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/open-data-500-global-open-data-initiative-survey/">Can we open our open data questionnaires?</a>
+            </strong>
+            <footer>
+              Nov 27, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/data-updatedness/">Updating of data catalogs</a>
+            </strong>
+            <footer>
+              Nov 22, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/open-data-in-plain-english/">Open Data in Plain English</a>
+            </strong>
+            <footer>
+              Nov 18, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/missouri-data-licensing/">License-free data in Missouri's data portal</a>
+            </strong>
+            <footer>
+              Oct 29, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/open-data-licensing/">Open data licensing</a>
+            </strong>
+            <footer>
+              Oct 02, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/socrata-deduplicate/">What's in a count?</a>
+            </strong>
+            <footer>
+              Sep 23, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/open-data-plans/">Open data possibilities</a>
+            </strong>
+            <footer>
+              Sep 17, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/socrata-formats/">What file formats are on the data portals?</a>
+            </strong>
+            <footer>
+              Sep 03, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/visiting-socrata/">My visit to Socrata, and data analysis about data analysis</a>
+            </strong>
+            <footer>
+              Aug 30, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/open-by-default/">Open by default</a>
+            </strong>
+            <footer>
+              Aug 21, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/socrata-metrics-api/">How to use Socrata's site metrics API</a>
+            </strong>
+            <footer>
+              Aug 14, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/openprism/">OpenPrism</a>
+            </strong>
+            <footer>
+              Aug 12, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/socrata-calendars/">Open Calendars</a>
+            </strong>
+            <footer>
+              Jul 29, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/socrata-users/">Who uses Socrata's in-browser charting features?</a>
+            </strong>
+            <footer>
+              Jul 25, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/socrata-genealogies/">Progeny of Ten Socrata Datasets</a>
+            </strong>
+            <footer>
+              Jul 19, 2013
+            </footer>
+          </div>
+          <div class="link">
+            <strong>
+              <a href="../!/socrata-summary/">Analyze all the datasets</a>
+            </strong>
+            <footer>
+              Jul 07, 2013
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="feedback">
+      <strong>
+        Tom requests your feedback.
+      </strong>
+      <p>
+        I can never decide what to write;
+        tell me what you like,
+        and my decisions will be easier.
+        (Contact information is <a href="../" target="_blank">here</a>.)
+      </p>
+      <a class="close" href="javascript:%24(%22#feedback%22).fadeOut()">
+        Close
+      </a>
+    </div>
+    <script src="../js/application-cb286d6f677.js"></script>
+    <!-- Piwik -->
+    <script type="text/javascript">
+    var pkBaseURL = (("https:" == document.location.protocol) ? "https://piwik.thomaslevine.com/" : "http://piwik.thomaslevine.com/");
+    document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+    </script><script type="text/javascript">
+    try {
+    var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
+    piwikTracker.trackPageView();
+    piwikTracker.enableLinkTracking();
+    } catch( err ) {}
+    </script><noscript><p><img src="http://piwik.thomaslevine.com/piwik.php?idsite=2" style="border:0" alt="Piwik tracking image"></p></noscript>
+    <!-- End Piwik Tracking Code -->
+  </body>
+</html>
