@@ -1,3 +1,3 @@
 #!/bin/sh
-
 mkdir -p .mtl_dir
+mkdir -p .mtl_dir-www.thomaslevine.com
