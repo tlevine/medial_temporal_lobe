@@ -60,7 +60,9 @@ if ! test -e "$mtl_dir"; then
 fi
 
 # Check whether the page exists
-if test $(ls "$mtl_dir/memories/" | wc -l) -gt 0 && grep -E "^url=$url[?/]?$" "$mtl_dir/memories/"*"/info"; then
+flexible_url=$(echo "$url"|sed 's/[\/?]$//')
+echo $flexible_url
+if test $(ls "$mtl_dir/memories/" | wc -l) -gt 0 && grep -E "^url=$flexible_url[?/]?$" "$mtl_dir/memories/"*"/info"; then
     echo "$url" is already saved.
     exit 13
 fi
