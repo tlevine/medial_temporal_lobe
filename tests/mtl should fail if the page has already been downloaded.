@@ -11,3 +11,9 @@ test $? = 13 || exit 1
 
 mtl add http://thomaslevine.com/open-data --mtl-dir .mtl_dir-thomaslevine.com
 test $? = 13 || exit 1
+
+mtl add http://thomaslevine.com/scarsdale --mtl-dir .mtl_dir-thomaslevine.com
+test $? = 13 || exit 1
+
+mtl add http://thomaslevine.com/scarsdale/ --mtl-dir .mtl_dir-thomaslevine.com
+test $? = 13 || exit 1
