@@ -82,6 +82,23 @@ if ! wget -U "Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.
     exit 15
 fi
 
+# Rename according to magic type
+type=$(file --mime-type --brief "$mtl_dir/memories/$hash/$source")
+if [ "$type" = 'text/html' ]; then
+    extension=html
+elif [ "$type" = 'application/msword' ]; then
+    extension=doc
+elif [ "$type" = 'application/pdf' ]; then
+    extension=pdf
+elif [ "$type" = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ]; then
+    extension=docx
+elif [ $(echo "$type"|cut -d/ -f1) = text ]; then
+    extension=txt
+else
+    extension=
+fi
+mv "$mtl_dir/memories/$hash/$source" "$mtl_dir/memories/$hash/$source.$extension"
+
 # Save some information.
 echo "
 <html>
