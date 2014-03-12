@@ -1,4 +1,4 @@
 #!/bin/sh
 set -e
-mtl add http://www.thomaslevine.com/open-data --mtl-dir .mtl_dir-www.thomaslevine.com
-mtl add http://www.thomaslevine.com --mtl-dir .mtl_dir-www.thomaslevine.com
+../mtl http://www.thomaslevine.com/open-data --mtl-dir .mtl_dir-www.thomaslevine.com
+../mtl http://www.thomaslevine.com --mtl-dir .mtl_dir-www.thomaslevine.com

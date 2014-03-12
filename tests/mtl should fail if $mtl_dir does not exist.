@@ -1,4 +1,4 @@
 #!/bin/sh
 
-mtl add localhost --mtl-dir not_a_directory
+../mtl localhost --mtl-dir not_a_directory
 test $? = 12

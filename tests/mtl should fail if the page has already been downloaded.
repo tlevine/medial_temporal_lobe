@@ -1,19 +1,19 @@
 #!/bin/sh
 
-mtl add thomaslevine.com --mtl-dir .mtl_dir-thomaslevine.com
+../mtl thomaslevine.com --mtl-dir .mtl_dir-thomaslevine.com
 test $? = 13 || exit 1
 
-mtl add http://thomaslevine.com --mtl-dir .mtl_dir-thomaslevine.com
+../mtl http://thomaslevine.com --mtl-dir .mtl_dir-thomaslevine.com
 test $? = 13 || exit 1
 
-mtl add http://thomaslevine.com/open-data/ --mtl-dir .mtl_dir-thomaslevine.com
+../mtl http://thomaslevine.com/open-data/ --mtl-dir .mtl_dir-thomaslevine.com
 test $? = 13 || exit 1
 
-mtl add http://thomaslevine.com/open-data --mtl-dir .mtl_dir-thomaslevine.com
+../mtl http://thomaslevine.com/open-data --mtl-dir .mtl_dir-thomaslevine.com
 test $? = 13 || exit 1
 
-mtl add http://thomaslevine.com/scarsdale --mtl-dir .mtl_dir-thomaslevine.com
+../mtl http://thomaslevine.com/scarsdale --mtl-dir .mtl_dir-thomaslevine.com
 test $? = 13 || exit 1
 
-mtl add http://thomaslevine.com/scarsdale/ --mtl-dir .mtl_dir-thomaslevine.com
+../mtl http://thomaslevine.com/scarsdale/ --mtl-dir .mtl_dir-thomaslevine.com
 test $? = 13 || exit 1

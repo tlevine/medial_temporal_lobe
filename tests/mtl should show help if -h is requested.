@@ -1,7 +1,5 @@
 #!/bin/sh
 set -e
 
-mtl -h
-mtl -h | grep USAGE
-mtl add -h
-mtl add -h | grep USAGE
+../mtl -h
+../mtl -h | grep USAGE

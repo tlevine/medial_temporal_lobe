@@ -1,6 +1,6 @@
 #!/bin/sh
 
-mtl add not-a-website --mtl-dir .mtl_dir
+../mtl not-a-website --mtl-dir .mtl_dir
 code=$?
 
 set -e
