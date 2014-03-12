@@ -4,7 +4,7 @@ set -e
 mtl_dir="/home/$USER/.medial_temporal_lobe"
 usage() {
     echo
-    echo "USAGE: $0 mtl [action] [url] [-ht] [--mtl-dir directory]"
+    echo "USAGE: $0 mtl [url] [-ht] [--mtl-dir directory]"
     echo
     echo '-h  Help'
     echo '-t  Tags, comma-separated, allowed characters: [0-9a-z_]'
@@ -28,9 +28,7 @@ do
             exit;;
         -*) usage >&2
             exit 1;;
-        *)  if test -z "$action"; then
-              action="$1"
-            elif test -z "$url"; then
+        *)  if test -z "$url"; then
               url="$1"
             else
               break
@@ -40,10 +38,7 @@ do
 done
 
 # Check the required parameters.
-if test "$action" != 'add'; then
-    echo Only the \"add\" action is supported right now.
-    exit 11
-elif test -z "$url"; then
+if test -z "$url"; then
     usage
     exit 11
 fi

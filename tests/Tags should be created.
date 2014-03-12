@@ -2,6 +2,7 @@
 set -e
 
 ../mtl thomaslevine.com --mtl-dir .mtl_dir -t a,b,c
+
 hash=$(ls .mtl_dir/memories)
 
 for tag in a b c; do
