@@ -68,26 +68,38 @@ if echo "$tags" | grep '[^0-9a-z_,]' > /dev/null; then
     exit 14
 fi
 
-# Save the page.
-uuid=$(uuidgen)
-mkdir -p "$mtl_dir/memories/$uuid"
+# Make the directory.
+hash=$(echo "$url"|md5sum|cut -d\  -f1)
+mkdir -p "$mtl_dir/memories/$hash"
+
 # Consider Moving this stuff in.
 # curl --header 'Host: mega.co.nz' --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:18.0) Gecko/20100101 Firefox/18.0' --header 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8' --header 'Accept-Language: en-US,en;q=0.5' --header 'Accept-Encoding: gzip, deflate' --header 'Content-Type: application/x-www-form-urlencoded' 'blah' -O -J -L
-if ! wget --header 'User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:18.0) Gecko/20100101 Firefox/18.0' -O "$mtl_dir/memories/$uuid/source" "$url"; then
+
+# Save the page.
+if ! wget -U "Mozilla/5.0 (Windows NT 5.1; rv:10.0.2) Gecko/20100101 Firefox/10.0.2" -O "$mtl_dir/memories/$hash/source" "$url"; then
     # Clean up on failure.
-    rm -R "$mtl_dir/memories/$uuid"
+    rm -R "$mtl_dir/memories/$hash"
     exit 15
 fi
 
 # Save some information.
-echo "url=$url" > "$mtl_dir/memories/$uuid/info"
-echo added=$(date --rfc-3339 ns) >> "$mtl_dir/memories/$uuid/info"
+echo "
+<html>
+  <head>
+    <title>$url</title>
+  </head>
+  <body>
+    <h1><a href=\"${url}\">$url</a></h1>
+    <p><a href="source">This copy</a> was downloaded on <time>$(date --rfc-3339 ns)</time>.</p>
+  </body>
+</html>
+" > "$mtl_dir/memories/$hash/index.html"
 
 # Save tags
 for tag in $(echo $tags | tr ',' '\n'); do
     mkdir -p "$mtl_dir/tags/$tag"
     (
         cd "$mtl_dir/tags/$tag"
-        ln -s ../../memories/$uuid .
+        ln -s ../../memories/$hash .
     )
 done
